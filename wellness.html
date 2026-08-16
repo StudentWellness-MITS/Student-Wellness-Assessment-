@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <base target="_top">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Browser Tab Logo -->
+  <link rel="icon" type="image/png" href="mgmits.png">
+
+  <title>Student Wellness Check-In</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      width: 100%;
+      overflow-x: hidden;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f7f9fc;
+      color: #263238;
+      overflow-x: hidden;
+    }
+
+    .page {
+      min-height: 100vh;
+      padding: 30px 15px 50px;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    /* =========================
+       HEADER
+    ========================= */
+
+    .header {
+      background: linear-gradient(135deg, #e8f5e9, #e3f2fd);
+      border-radius: 18px;
+      padding: 35px 30px;
+      margin-bottom: 22px;
+      border: 1px solid #dce7e1;
+      text-align: center;
+    }
+
+    /* College Logo */
+
+    .college-logo {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .college-logo img {
+      width: 150px;
+      max-width: 45vw;
+      height: auto;
+      display: inline-block;
+      object-fit: contain;
+    }
+
+    .header h1 {
+      margin: 0;
+      font-size: 28px;
+      color: #263238;
+      font-weight: 700;
+      line-height: 1.3;
+    }
+
+    /* =========================
+       NOTICE
+    ========================= */
+
+    .notice {
+      background: #fff8e1;
+      border-left: 4px solid #f9a825;
+      border-radius: 10px;
+      padding: 18px 20px;
+      margin-bottom: 20px;
+      color: #5d4037;
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    .notice strong {
+      color: #4e342e;
+      font-size: 15px;
+    }
+
+    .notice p {
+      margin: 8px 0;
+    }
+
+    /* =========================
+       FORM CARD
+    ========================= */
+
+    .form-card {
+      width: 100%;
+      background: white;
+      border-radius: 18px;
+      padding: 15px;
+      box-shadow: 0 5px 25px rgba(0, 0, 0, 0.07);
+      border: 1px solid #e5e9ed;
+      overflow: hidden;
+    }
+
+    .form-title {
+      padding: 8px 15px 15px;
+      font-size: 16px;
+      font-weight: 600;
+      color: #37474f;
+    }
+
+    iframe {
+      display: block;
+      width: 100%;
+      min-height: 900px;
+      border: none;
+      border-radius: 12px;
+    }
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    .footer {
+      text-align: center;
+      margin-top: 22px;
+      color: #78909c;
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+    /* =========================
+       TABLET
+    ========================= */
+
+    @media (max-width: 768px) {
+
+      .page {
+        padding: 20px 10px 35px;
+      }
+
+      .header {
+        padding: 30px 18px;
+      }
+
+      .college-logo {
+        margin-bottom: 18px;
+      }
+
+      .college-logo img {
+        width: 130px;
+        max-width: 40vw;
+      }
+
+      .header h1 {
+        font-size: 25px;
+      }
+
+      .form-card {
+        padding: 10px;
+      }
+
+      iframe {
+        min-height: 950px;
+      }
+    }
+
+    /* =========================
+       MOBILE
+    ========================= */
+
+    @media (max-width: 600px) {
+
+      .page {
+        padding: 12px 6px 30px;
+      }
+
+      .header {
+        padding: 25px 15px;
+        margin-bottom: 15px;
+        border-radius: 14px;
+      }
+
+      .college-logo {
+        margin-bottom: 16px;
+      }
+
+      .college-logo img {
+        width: 120px;
+        max-width: 45vw;
+      }
+
+      .header h1 {
+        font-size: 22px;
+        line-height: 1.3;
+      }
+
+      .notice {
+        padding: 14px 15px;
+        margin-bottom: 15px;
+        font-size: 13px;
+        line-height: 1.6;
+        border-radius: 9px;
+      }
+
+      .notice strong {
+        font-size: 14px;
+      }
+
+      .form-card {
+        padding: 5px;
+        border-radius: 12px;
+      }
+
+      .form-title {
+        padding: 10px 8px 12px;
+        font-size: 15px;
+      }
+
+      iframe {
+        min-height: 1100px;
+        border-radius: 8px;
+      }
+
+      .footer {
+        margin-top: 18px;
+        font-size: 12px;
+      }
+    }
+
+    /* =========================
+       VERY SMALL PHONES
+    ========================= */
+
+    @media (max-width: 380px) {
+
+      .header {
+        padding: 22px 12px;
+      }
+
+      .college-logo img {
+        width: 105px;
+      }
+
+      .header h1 {
+        font-size: 20px;
+      }
+
+      .notice {
+        font-size: 12.5px;
+      }
+
+      iframe {
+        min-height: 1150px;
+      }
+    }
+
+  </style>
+</head>
+
+
+<body>
+
+  <div class="page">
+
+    <div class="container">
+
+      <!-- =========================
+           HEADER
+      ========================= -->
+
+      <div class="header">
+
+        <div class="college-logo">
+          <img src="mgmits.png" alt="College Logo">
+        </div>
+
+        <h1>
+          Student Wellness Check-In
+        </h1>
+
+      </div>
+
+
+      <!-- =========================
+           INFORMATION NOTICE
+      ========================= -->
+
+      <div class="notice">
+
+        <strong>A safe space for you.</strong>
+
+        <p>
+          Dear Student,
+        </p>
+
+        <p>
+          This form is intended to collect your personal, academic, and
+          self-reflection information for the student counselling process.
+          The information you provide will be used only for academic guidance
+          and student welfare. Please answer honestly.
+        </p>
+
+        <p>
+          <strong>Note:</strong>
+          The confidential assessment and counselling session records will be
+          maintained separately by your faculty counsellor.
+        </p>
+
+      </div>
+
+
+      <!-- =========================
+           GOOGLE FORM
+      ========================= -->
+
+      <div class="form-card">
+
+        <div class="form-title">
+          Student Wellness Assessment Questionnaire
+        </div>
+
+        <iframe
+          src="https://docs.google.com/forms/d/e/1FAIpQLSeejO1KGjPwUaK1j7ZtqzrVPaMRQ5hZrAwsc7rxBv6Y30FKXQ/viewform?embedded=true"
+          frameborder="0"
+          marginheight="0"
+          marginwidth="0">
+          Loading…
+        </iframe>
+
+      </div>
+
+
+      <!-- =========================
+           FOOTER
+      ========================= -->
+
+      <div class="footer">
+
+        Student Wellness Support System<br>
+
+        <span>
+          Your wellbeing is important to us.
+        </span>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</body>
+</html>
